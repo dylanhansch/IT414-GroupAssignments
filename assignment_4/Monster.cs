@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment4
 {
-    abstract class Monster
+    abstract class Monster:IAction
     {
         public int Level = 1;
         public int Health = 10;
