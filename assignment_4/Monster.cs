@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Assignment4
 {
-    public abstract class Monster : ICombatable
+    abstract class Monster : ICombatable
     {
         public int Level { get; set; } = 1;
         public int Health { get; set; } = 10;
         public int maxLevel = 15;
 
-        // public Monster(int level = 1)
-        //{
-        //     this.Level = level;
-        //}
-
+        public Monster(int level)
+        {
+            this.Level = level;
+        }
+        
         public string Attack(ICombatable player)
         {
             return "Attacking!";
