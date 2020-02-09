@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Assignment4
 {
-    abstract class Monster<T> : ICombatable
+    abstract class Monster : ICombatable
     {
-        public int Level = 1;
-        public int Health = 10;
-        private int maxLevel = 15;
+        public int Level { get; set; } = 1;
+        public int Health { get; set; } = 10;
+        public int maxLevel = 15;
 
         public Monster(int level)
         {
             this.Level = level;
         }
         
-        public string Attack(Player player)
+        public string Attack(ICombatable player)
         {
             return "Attacking!";
         }
 
-        public string Defend(Player player)
+        public string Defend(ICombatable player)
         {
             int defendValue = maxLevel - player.Level;
             this.Health =- defendValue;
