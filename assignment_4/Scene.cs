@@ -28,17 +28,17 @@ namespace Assignment4
             List<Monster> monsters = new List<Monster>();
 
             int numOfMonsters = GetLevelModifier() * 3;
-            int monsterLevel = GetLevelModifier() + 1;
+           // int monsterLevel = GetLevelModifier() + 1; // commented out, was used for debugging
 
             Random random = new Random();
 
             foreach (var _ in Enumerable.Range(0, numOfMonsters))
             {
-                // int randomIdx = random.Next(0, monsterTypes.Length);
+                 int randomIdx = random.Next(0, monsterTypes.Length);
 
-                // Monster monster = (Monster) Activator.CreateInstance(monsterTypes[randomIdx]); // TODO: Pick monster types based on player level
-                Monster monster = GetMonsterType(SceneLevel);
-                //  monster.Level = monsterLevel; // TODO: Add this to constructor?
+                // Monster monster = (Monster) Activator.CreateInstance(monsterTypes[randomIdx]); 
+                 Monster monster = GetMonsterType(SceneLevel);
+                // monster.Level = monsterLevel; // TODO: Add this to constructor?
 
                 monsters.Add(monster);
             }
@@ -69,17 +69,20 @@ namespace Assignment4
             int monsterLevel = GetLevelModifier() + 1;
             if(level < 5)
             {
-                Monster zombie = new Zombie(monsterLevel);
+                Monster zombie = new Zombie();
+                zombie.Level = monsterLevel;
                 return zombie;
             }
             else if (level < 10)
             {
-                Monster wereWolf = new WereWolf(monsterLevel);
+                Monster wereWolf = new WereWolf();
+                wereWolf.Level = monsterLevel;
                 return wereWolf;
             }
             else
             {
-                Monster giant = new Giant(monsterLevel);
+                Monster giant = new Giant();
+                giant.Level = monsterLevel;
                 return giant;
             }
         }

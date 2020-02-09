@@ -1,10 +1,12 @@
-using System;
+﻿using System;
 namespace Assignment4
 {
     public interface ICombatable
     {
         int Health { get; set; }
-        string Attack(Combatable subject);
-        string Defend(Combatable subject);
+        int Level { get; set; }
+
+        string Attack(ICombatable subject);
+        string Defend(ICombatable subject);
     }
 }
