@@ -12,7 +12,7 @@ namespace Assignment4
         public int Health { get; set; } = 10;
         public int maxLevel = 15;
 
-        public Monster(int level)
+        public Monster(int level = 1)
         {
             this.Level = level;
         }
