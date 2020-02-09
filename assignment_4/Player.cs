@@ -12,7 +12,7 @@ namespace Assignment4
         public int Level { get; set; } = 1;
         public string Name { get; set; }
         public int Health { get; set; } = 100;
-        const private maxLevel = 20; 
+        private static readonly int maxLevel = 20; 
 
         private Player() {}
 
@@ -26,12 +26,12 @@ namespace Assignment4
             return player;
         }
 
-        public string Attack(Monster m)
+        public string Attack(ICombatable m)
         {
             return "Attacking!";
         }
 
-        public string Defend(Monster m)
+        public string Defend(ICombatable m)
         {
             // I don't know if this is right
             // ex - palyer level 15, monster level 1 -> damage = 20 + 1 - 15 = 6
