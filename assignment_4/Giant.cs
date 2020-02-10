@@ -8,6 +8,5 @@ namespace Assignment4
 {
     class Giant : Monster
     {
-        public int Health = 50;
     }
 }

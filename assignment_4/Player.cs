@@ -26,18 +26,17 @@ namespace Assignment4
             return player;
         }
 
-        public string Attack(ICombatable m)
+        public string Attack(ICombatable subject)
         {
             return "Attacking!";
         }
 
-        public string Defend(ICombatable m)
+        public string Defend(ICombatable subject)
         {
-            // I don't know if this is right
-            // ex - palyer level 15, monster level 1 -> damage = 20 + 1 - 15 = 6
+            // ex - player level 15, monster level 1 -> damage = 20 + 1 - 15 = 6
             //    - player level 2, monster level 2 -> damage = 20 + 2 - 2 = 20
             //    - player level 10, monster level 15 -> damage = 20 + 15 - 10 = 25... 
-            int damage = maxLevel + m.Level - Level;
+            int damage = maxLevel + subject.Level - Level;
             this.Health =- damage;
 
             return "Defending.";

@@ -8,6 +8,5 @@ namespace Assignment4
 {
     class Zombie : Monster
     {
-        public int Health = 10;
     }
 }

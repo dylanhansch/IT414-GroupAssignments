@@ -24,22 +24,15 @@ namespace Assignment4
 
         public List<Monster> SpawnMonstersForLevel(int level)
         {
-            Type[] monsterTypes = { typeof(Zombie), typeof(WereWolf), typeof(Giant) };
             List<Monster> monsters = new List<Monster>();
 
             int numOfMonsters = GetLevelModifier() * 3;
-           // int monsterLevel = GetLevelModifier() + 1; // commented out, was used for debugging
 
             Random random = new Random();
 
             foreach (var _ in Enumerable.Range(0, numOfMonsters))
             {
-                 int randomIdx = random.Next(0, monsterTypes.Length);
-
-                // Monster monster = (Monster) Activator.CreateInstance(monsterTypes[randomIdx]); 
-                 Monster monster = GetMonsterType(SceneLevel);
-                // monster.Level = monsterLevel; // TODO: Add this to constructor?
-
+                Monster monster = GetMonsterType(SceneLevel);
                 monsters.Add(monster);
             }
 

@@ -17,14 +17,14 @@ namespace Assignment4
             this.Level = level;
         }
         
-        public string Attack(ICombatable player)
+        public string Attack(ICombatable subject)
         {
             return "Attacking!";
         }
 
-        public string Defend(ICombatable player)
+        public string Defend(ICombatable subject)
         {
-            int defendValue = maxLevel - player.Level;
+            int defendValue = maxLevel - subject.Level;
             this.Health =- defendValue;
 
             return "Defending.";
